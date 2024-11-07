@@ -1,0 +1,489 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Uncutsans, sans-serif';
+    color: #f6f6f6;
+    line-height: 1.6;
+    background-color: #273353;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Animation for nav */
+nav {
+    background-color: #273353;
+    padding: 10px 0;
+    border-radius: 3%;
+    animation: slideDown 1s ease-in-out;
+}
+
+/* Nav items */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Space between the list items */
+    justify-content: center; /* Center the nav items horizontally */
+    padding: 0; /* Remove default padding */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+nav a {
+    color: white;
+    font-size: large;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #7AB2D3;
+    border-radius: 5px;
+}
+@media (prefers-reduced-motion: no-preference) {
+    nav {
+        animation: slideDown 1s ease-in-out;
+    }
+
+    .athlete:hover,
+    #gallery img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    }
+    
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+}
+
+/* Header styling */
+header h1 a {
+    font-size: 2.5rem;
+    font-family: 'Uncutsans, sans-serif';
+    color: #2088c5;
+    text-align: center;
+}
+
+header h2 {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Link styling */
+a {
+    color: #f6f6f6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #040a7a;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #94c0d8;
+}
+
+/* Main content */
+main {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+li {
+    list-style-type: none;
+}
+
+#summary .athlete {
+    display: inline;
+    background-color: transparent; /* or any other color you prefer */
+    margin-bottom: 0; /* Adjust as necessary */
+    padding: 0; /* Adjust as necessary */
+    box-shadow: none; /* Remove shadow */
+    transition: none; /* Disable transitions */
+}
+/* Table styling */
+.table-wrapper {
+    overflow-x: auto;
+    margin-bottom: 40px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #4A628A;
+    box-shadow: 0 4px 8px rgba(59, 48, 48, 0.1);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #f6f6f6;
+    backdrop-filter: blur(4px);
+}
+
+th {
+    position: sticky;
+    top: 0;
+    background-color: rgba(50, 57, 98, 0.3);
+    color: #fcfafa;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+
+
+
+/* Athlete card styling */
+.athlete {
+    display: inline-grid;
+    background-color: rgba(255, 255, 255, 0.1);
+    gap: 30px;
+    margin-bottom: 20px;
+    padding: 12px;
+    min-width: 180px;
+    border-radius: 12px;
+    box-shadow: 0 4px 4px rgba(209, 209, 209, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.athlete:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(209, 209, 209, 0.4);
+}
+
+.athlete img {
+    object-fit: cover;
+    border-radius: 16px;
+    width: 150px;
+    height: 150px;
+}
+
+.athlete dl {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: repeat(3, auto);
+    row-gap: 10px;
+    width: 50%;
+}
+
+.athlete dt, .athlete dd {
+    color: #f6f6f6;
+    line-height: 1.5;
+}
+
+/* Athlete hover animation */
+.athlete {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.athlete:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+
+
+@media (min-width: 768px) {
+    .athlete {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 5px; /* Adds horizontal gap on larger screens */
+        margin: 0 10px 20px 10px; /* Space between cards */
+        box-sizing: border-box;
+    }
+
+    .athlete-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+#gallery {
+    margin: 20px 0;
+    text-align: center; /* Center-aligns the heading and image container */
+}
+
+#gallery h2 {
+    margin-bottom: 20px; /* Space between the heading and images */
+    font-size: 24px; /* Adjust font size as needed */
+}
+
+.image-container {
+    display: flex; /* Use flexbox for horizontal alignment */
+    row-gap: 10px;
+    column-gap: 10px;
+    justify-content: center; /* Center the images */
+    flex-wrap: wrap; /* Allow wrapping of images to next line if necessary */
+}
+
+#gallery img {
+    width: 200px; /* Fixed width for images */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+}
+
+#gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Footer styling */
+footer {
+    background-color: #273353;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Smooth transition for row hover */
+tr {
+    transition: background-color 0.3s ease-in-out;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.content {
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Slightly moved down */
+    animation: fadeInUp 1s ease-in-out 0.5s forwards; /* 0.5s delay */
+}
+.fade-in {
+    opacity: 0;
+    animation: fadeInEffect 1s ease-in forwards;
+}
+
+
+@media (prefers-color-scheme: light) {
+    body {
+        color: #333333;
+        background-color: #e4e5f1;
+    }
+
+    nav {
+        background-color: #e4e5f1;
+    }
+
+    nav a {
+        color: rgb(43, 76, 111);
+    }
+
+    nav a:hover {
+        background-color: white;
+    }
+
+    a:visited {
+        color: #0384cf;
+    }
+
+    header h2 {
+        color: #273353;
+    }
+
+    table {
+        background-color: #c4c4cd;
+    }
+
+    th {
+        background-color: #a2afb8;
+        color: #333333;
+    }
+
+    tr:nth-child(even) {
+        background-color: #a6bbc7;
+    }
+
+    .athlete {
+        background-color: #a6bbc7;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .athlete:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    }
+
+    .athlete dt, .athlete dd {
+        color: #333333;
+    }
+
+    footer {
+        background-color: #e4e5f1;
+        color: #333333;
+    }
+}
+
+.flashbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 10;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Flashbox content */
+.flashbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: #f1f1f1;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.prev:hover, .next:hover {
+    color: #bbbbbb;
+}
+
+/* Dot indicators */
+.dot-container {
+    text-align: center;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+#topBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: #2088c5; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+#topBtn:hover {
+    background-color: #555; /* Dark-grey background on hover */
+}
+@media (prefers-reduced-motion: reduce) {
+    nav, nav a, a, .athlete, #gallery img, .dot {
+        transition: none;
+    }
+
+    nav a:hover,
+    a:hover,
+    .athlete:hover,
+    #gallery img:hover,
+    .dot:hover {
+        color: inherit;
+        transform: none;
+        transition: none;
+        box-shadow: none;
+        text-decoration: none;
+    }
+
+    /* Hide dots */
+    .dot-container {
+        display: none;
+    }
+}
+.skip-to-main {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #2088c5;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    z-index: 100;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    opacity: 0;
+}
+
+.skip-to-main:focus {
+    transform: translateY(0);
+    opacity: 1;
+}
